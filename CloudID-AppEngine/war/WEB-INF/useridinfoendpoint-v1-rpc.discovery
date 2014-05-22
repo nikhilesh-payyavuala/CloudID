@@ -1,0 +1,229 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"IneSQDZRISaU6plvxbhHIOAs-WY/Mcb12aJ6bbpFjbHhg8ncxIW43-o\"",
+ "discoveryVersion": "v1",
+ "id": "useridinfoendpoint:v1",
+ "name": "useridinfoendpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "cloudid.com",
+ "ownerName": "cloudid.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://sixth-oxygen-529.appspot.com/_ah/api/",
+ "rpcUrl": "https://sixth-oxygen-529.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_UserIdInfo": {
+   "id": "CollectionResponse_UserIdInfo",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "UserIdInfo"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "UserIdInfo": {
+   "id": "UserIdInfo",
+   "type": "object",
+   "properties": {
+    "dob": {
+     "type": "string"
+    },
+    "expiryDate": {
+     "type": "string"
+    },
+    "fName": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "idhash": {
+     "type": "string"
+    },
+    "imageURL": {
+     "type": "string"
+    },
+    "lName": {
+     "type": "string"
+    },
+    "lastAccessedBy": {
+     "type": "string"
+    },
+    "lastLocation": {
+     "type": "string"
+    },
+    "rewardPoints": {
+     "type": "string"
+    },
+    "timeStampCreated": {
+     "type": "string",
+     "format": "int64"
+    },
+    "timeStampLastAccessed": {
+     "type": "string",
+     "format": "int64"
+    },
+    "type": {
+     "type": "string"
+    },
+    "userName": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "useridinfoendpoint.getUserIdInfo": {
+   "id": "useridinfoendpoint.getUserIdInfo",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "useridinfoendpoint.insertUserIdInfo": {
+   "id": "useridinfoendpoint.insertUserIdInfo",
+   "parameters": {
+    "resource": {
+     "$ref": "UserIdInfo"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "useridinfoendpoint.listUserIdInfo": {
+   "id": "useridinfoendpoint.listUserIdInfo",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    }
+   },
+   "returns": {
+    "$ref": "CollectionResponse_UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "useridinfoendpoint.removeUserIdInfo": {
+   "id": "useridinfoendpoint.removeUserIdInfo",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "useridinfoendpoint.updateUserIdInfo": {
+   "id": "useridinfoendpoint.updateUserIdInfo",
+   "parameters": {
+    "resource": {
+     "$ref": "UserIdInfo"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

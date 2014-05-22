@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity" >
+    
+    <RelativeLayout  android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:text="Cloud ID"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"       
+        android:contentDescription="@string/app_name" 
+        android:textSize="120dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textStyle="italic|bold"
+        android:id="@+id/header"
+        android:layout_alignParentTop="true"
+        
+        />
+</RelativeLayout>
+<RelativeLayout android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_sign_in"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" >
+    </com.google.android.gms.common.SignInButton>
+    
+    </RelativeLayout>
+
+     
+</RelativeLayout>
+
+

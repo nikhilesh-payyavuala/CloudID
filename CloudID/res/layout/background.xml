@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- login screen for the reQuest App -->
+
+
+
+
+<!-- layout of the entire app -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+<ImageView
+ 	    android:id="@+id/logic_backround_image"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:contentDescription="login_background_desc"
+ 	    android:scaleType= "fitXY"
+ 	    android:src="@drawable/background6" />
+   
+    
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+<ScrollView 
+	    android:id ="@+id/login_scroll_view"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:animateLayoutChanges="true"
+	    >
+	    
+	</ScrollView>
+
+</FrameLayout>

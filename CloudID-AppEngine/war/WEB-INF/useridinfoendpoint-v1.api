@@ -1,0 +1,228 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://sixth-oxygen-529.appspot.com/_ah/api",
+  "name" : "useridinfoendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://sixth-oxygen-529.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "cloudid.com",
+  "ownerName" : "cloudid.com",
+  "methods" : {
+    "useridinfoendpoint.listUserIdInfo" : {
+      "path" : "useridinfo",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.cloudid.UserIdInfoEndpoint.listUserIdInfo",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "useridinfoendpoint.getUserIdInfo" : {
+      "path" : "useridinfo/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.cloudid.UserIdInfoEndpoint.getUserIdInfo",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "useridinfoendpoint.insertUserIdInfo" : {
+      "path" : "useridinfo",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.cloudid.UserIdInfoEndpoint.insertUserIdInfo",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "useridinfoendpoint.updateUserIdInfo" : {
+      "path" : "useridinfo",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.cloudid.UserIdInfoEndpoint.updateUserIdInfo",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "useridinfoendpoint.removeUserIdInfo" : {
+      "path" : "useridinfo/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.cloudid.UserIdInfoEndpoint.removeUserIdInfo",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "CollectionResponse_UserIdInfo" : {
+        "id" : "CollectionResponse_UserIdInfo",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "UserIdInfo"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "UserIdInfo" : {
+        "id" : "UserIdInfo",
+        "type" : "object",
+        "properties" : {
+          "userName" : {
+            "type" : "string"
+          },
+          "lastLocation" : {
+            "type" : "string"
+          },
+          "fName" : {
+            "type" : "string"
+          },
+          "lName" : {
+            "type" : "string"
+          },
+          "dob" : {
+            "type" : "string"
+          },
+          "expiryDate" : {
+            "type" : "string"
+          },
+          "rewardPoints" : {
+            "type" : "string"
+          },
+          "imageURL" : {
+            "type" : "string"
+          },
+          "timeStampCreated" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "lastAccessedBy" : {
+            "type" : "string"
+          },
+          "timeStampLastAccessed" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "idhash" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.cloudid.UserIdInfoEndpoint.listUserIdInfo" : {
+        "response" : {
+          "$ref" : "CollectionResponse_UserIdInfo"
+        }
+      },
+      "com.cloudid.UserIdInfoEndpoint.getUserIdInfo" : {
+        "response" : {
+          "$ref" : "UserIdInfo"
+        }
+      },
+      "com.cloudid.UserIdInfoEndpoint.insertUserIdInfo" : {
+        "request" : {
+          "$ref" : "UserIdInfo"
+        },
+        "response" : {
+          "$ref" : "UserIdInfo"
+        }
+      },
+      "com.cloudid.UserIdInfoEndpoint.updateUserIdInfo" : {
+        "request" : {
+          "$ref" : "UserIdInfo"
+        },
+        "response" : {
+          "$ref" : "UserIdInfo"
+        }
+      },
+      "com.cloudid.UserIdInfoEndpoint.removeUserIdInfo" : {
+      }
+    }
+  }
+}

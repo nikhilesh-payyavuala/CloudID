@@ -1,0 +1,235 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"IneSQDZRISaU6plvxbhHIOAs-WY/Mcb12aJ6bbpFjbHhg8ncxIW43-o\"",
+ "discoveryVersion": "v1",
+ "id": "useridinfoendpoint:v1",
+ "name": "useridinfoendpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "cloudid.com",
+ "ownerName": "cloudid.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://sixth-oxygen-529.appspot.com/_ah/api/useridinfoendpoint/v1/",
+ "basePath": "/_ah/api/useridinfoendpoint/v1/",
+ "rootUrl": "https://sixth-oxygen-529.appspot.com/_ah/api/",
+ "servicePath": "useridinfoendpoint/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_UserIdInfo": {
+   "id": "CollectionResponse_UserIdInfo",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "UserIdInfo"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "UserIdInfo": {
+   "id": "UserIdInfo",
+   "type": "object",
+   "properties": {
+    "dob": {
+     "type": "string"
+    },
+    "expiryDate": {
+     "type": "string"
+    },
+    "fName": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "idhash": {
+     "type": "string"
+    },
+    "imageURL": {
+     "type": "string"
+    },
+    "lName": {
+     "type": "string"
+    },
+    "lastAccessedBy": {
+     "type": "string"
+    },
+    "lastLocation": {
+     "type": "string"
+    },
+    "rewardPoints": {
+     "type": "string"
+    },
+    "timeStampCreated": {
+     "type": "string",
+     "format": "int64"
+    },
+    "timeStampLastAccessed": {
+     "type": "string",
+     "format": "int64"
+    },
+    "type": {
+     "type": "string"
+    },
+    "userName": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "getUserIdInfo": {
+   "id": "useridinfoendpoint.getUserIdInfo",
+   "path": "useridinfo/{id}",
+   "httpMethod": "GET",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insertUserIdInfo": {
+   "id": "useridinfoendpoint.insertUserIdInfo",
+   "path": "useridinfo",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "UserIdInfo",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "listUserIdInfo": {
+   "id": "useridinfoendpoint.listUserIdInfo",
+   "path": "useridinfo",
+   "httpMethod": "GET",
+   "parameters": {
+    "cursor": {
+     "type": "string",
+     "location": "query"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32",
+     "location": "query"
+    }
+   },
+   "response": {
+    "$ref": "CollectionResponse_UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "removeUserIdInfo": {
+   "id": "useridinfoendpoint.removeUserIdInfo",
+   "path": "useridinfo/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateUserIdInfo": {
+   "id": "useridinfoendpoint.updateUserIdInfo",
+   "path": "useridinfo",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "UserIdInfo",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "UserIdInfo"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

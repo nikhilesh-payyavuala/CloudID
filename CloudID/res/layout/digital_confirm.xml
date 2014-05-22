@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    
+    
+    <TextView
+        android:text="UF DETAILS"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#07A7F7"
+        android:contentDescription="@string/app_name" 
+        android:textSize="34dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textStyle="italic|bold"/>
+    <TextView
+        
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="bold"
+         android:textSize="20dp"
+         android:text="FIRST NAME : "
+       
+         />
+    <TextView
+        android:id="@+id/fname"
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="italic"
+         android:textSize="20dp"
+       
+         />
+    <TextView
+        
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="bold"
+         android:textSize="20dp"
+         android:text="LAST NAME : "
+       
+         />
+    <TextView
+        android:id="@+id/lname"
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        
+        />
+    <TextView
+        
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="bold"
+         android:textSize="20dp"
+         android:text="DOB : "
+       
+         />
+    <TextView
+        android:id="@+id/dob"
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="italic"
+         android:textSize="20dp"
+        
+        />
+    <TextView
+        
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="bold"
+         android:textSize="20dp"
+         android:text="UFID : "
+       
+         />
+    <TextView
+        android:id="@+id/ufid"
+       
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+         android:textStyle="italic"
+         android:textSize="20dp"
+        
+        />
+    </LinearLayout>
